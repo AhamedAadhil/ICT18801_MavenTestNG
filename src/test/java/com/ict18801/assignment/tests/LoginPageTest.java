@@ -26,16 +26,18 @@ public class LoginPageTest extends TestBase {
     public void loginPageTitleTest() {
         String title = loginPage.validateLoginPageTitle();
         Assert.assertEquals(title, "actiTIME - Login");
+        logger.info(title);
     }
 
     @Test(priority = 2)
     public void logoTest() {
         boolean isdisplayed = loginPage.validateLogo();
         Assert.assertTrue(isdisplayed);
+        logger.info(isdisplayed);
     }
 
     @Test(priority = 3)
-    public void LoginTest() {
+    public void loginTest() {
         homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
 

@@ -18,11 +18,12 @@ public class LoginPage extends TestBase {
 
     //Constructor to init Elements
     public LoginPage() {
-        PageFactory.initElements(driver, this);//LoginPage.this  instead of this keyword
+        PageFactory.initElements(driver, this);
     }
 
     //Actions
     public String validateLoginPageTitle() {
+        logger.info(driver.getTitle());
         return driver.getTitle();
     }
 
