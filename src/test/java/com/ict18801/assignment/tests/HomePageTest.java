@@ -15,49 +15,57 @@ public class HomePageTest extends TestBase {
     UsersPage usersPage;
     TimeTrackPage timeTrackPage;
 
-    public HomePageTest(){
+    public HomePageTest() {
         super();
     }
+
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         initialization();
-        loginPage=new LoginPage();
-        reportsPage=new ReportsPage();
-        tasksPage=new TasksPage();
-        usersPage= new UsersPage();
-        timeTrackPage=new TimeTrackPage();
-        homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
+        loginPage = new LoginPage();
+        reportsPage = new ReportsPage();
+        tasksPage = new TasksPage();
+        usersPage = new UsersPage();
+        timeTrackPage = new TimeTrackPage();
+        homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
+
     @Test(priority = 1)
-    public void titeTest(){
-        String title= homePage.validateTitle();
-        Assert.assertEquals(title,"actiTIME - Login","incorrect title");
+    public void titleTest() {
+        String title = homePage.validateTitle();
+        Assert.assertEquals(title, "actiTIME - Login", "incorrect title");
         logger.info(title);
     }
+
     @Test(priority = 2)
-    public void usernameTest(){
-        boolean isVisible=homePage.VerifyUsername();
-        Assert.assertTrue(isVisible,"User name incorrect");
+    public void usernameTest() {
+        boolean isVisible = homePage.VerifyUsername();
+        Assert.assertTrue(isVisible, "User name incorrect");
         logger.info(isVisible);
     }
+
     @Test(priority = 3)
-    public void clickOnTasksPageTest(){
-        tasksPage=homePage.ClickTasks();
+    public void clickOnTasksPageTest() {
+        tasksPage = homePage.ClickTasks();
     }
+
     @Test(priority = 4)
-    public void clickOnReportsPageTest(){
-        reportsPage=homePage.ClickReports();
+    public void clickOnReportsPageTest() {
+        reportsPage = homePage.ClickReports();
     }
+
     @Test(priority = 5)
-    public void clickOnTimeTrackPageTest(){
-        timeTrackPage=homePage.ClickTimeTrack();
+    public void clickOnTimeTrackPageTest() {
+        timeTrackPage = homePage.ClickTimeTrack();
     }
+
     @Test(priority = 6)
-    public void clickOnUserPageTest(){
-        usersPage=homePage.ClickUsers();
+    public void clickOnUserPageTest() {
+        usersPage = homePage.ClickUsers();
     }
+
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

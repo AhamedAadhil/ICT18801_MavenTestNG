@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class TestBase {
-    public static Logger logger= Logger.getLogger(TestBase.class);
+    public static Logger logger = Logger.getLogger(TestBase.class);
     public static WebDriver driver;
     public static Properties prop;
 
@@ -29,13 +29,13 @@ public class TestBase {
         }
     }
 
-    public static void initialization(){
+    public static void initialization() {
         String browserName = prop.getProperty("browser");
         if (browserName.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver","E:\\ChromeDrivers\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "E:\\ChromeDrivers\\chromedriver.exe");
             driver = new ChromeDriver();
         } else if (browserName.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver","E:\\ChromeDrivers\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", "E:\\ChromeDrivers\\geckodriver.exe");
             driver = new FirefoxDriver();
         }
         driver.manage().window().maximize();
