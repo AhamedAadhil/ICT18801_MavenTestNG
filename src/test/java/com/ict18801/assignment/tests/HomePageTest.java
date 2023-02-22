@@ -13,7 +13,7 @@ public class HomePageTest extends TestBase {
     ReportsPage reportsPage;
     TasksPage tasksPage;
     UsersPage usersPage;
-    TimeTrackPage timeTrackPage;
+
 
     public HomePageTest() {
         super();
@@ -26,7 +26,6 @@ public class HomePageTest extends TestBase {
         reportsPage = new ReportsPage();
         tasksPage = new TasksPage();
         usersPage = new UsersPage();
-        timeTrackPage = new TimeTrackPage();
         homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
 
@@ -54,10 +53,6 @@ public class HomePageTest extends TestBase {
         reportsPage = homePage.ClickReports();
     }
 
-    @Test(priority = 5)
-    public void clickOnTimeTrackPageTest() {
-        timeTrackPage = homePage.ClickTimeTrack();
-    }
 
     @Test(priority = 6)
     public void clickOnUserPageTest() {

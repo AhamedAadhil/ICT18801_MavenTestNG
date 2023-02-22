@@ -25,14 +25,14 @@ public class LoginPageTest extends TestBase {
     @Test(priority = 1)
     public void loginPageTitleTest() {
         String title = loginPage.validateLoginPageTitle();
-        Assert.assertEquals(title, "actiTIME - Login");
+        Assert.assertEquals(title, "actiTIME - Login","Incorrect page Title");
         logger.info(title);
     }
 
     @Test(priority = 2)
     public void logoTest() {
         boolean isdisplayed = loginPage.validateLogo();
-        Assert.assertTrue(isdisplayed);
+        Assert.assertTrue(isdisplayed,"The log is not visible");
         logger.info(isdisplayed);
     }
 

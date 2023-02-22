@@ -8,8 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends TestBase {
     @FindBy(xpath = "//a[contains(@class,'userProfileLink username ')]")
     WebElement username;
-    @FindBy(xpath = "//td[contains(text(),'Enter Time-Track')]")
-    WebElement timeTrack;
     @FindBy(xpath = "//a[contains(@class,'content tasks')]")
     WebElement tasks;
     @FindBy(xpath = "//a[contains(@class,'content reports')]")
@@ -29,11 +27,6 @@ public class HomePage extends TestBase {
     public boolean VerifyUsername() {
         logger.info(username.isDisplayed());
         return username.isDisplayed();
-    }
-
-    public TimeTrackPage ClickTimeTrack() {
-        timeTrack.click();
-        return new TimeTrackPage();
     }
 
     public TasksPage ClickTasks() {
