@@ -26,10 +26,21 @@ public class UsersPageTest extends TestBase {
         usersPage = homePage.ClickUsers();
     }
 
-    @Test
+    @Test(priority = 1)
     public void validateUsersTextTest() {
         boolean isVisible = usersPage.validateUsersText();
         Assert.assertTrue(isVisible, "The text Users is not visible");
+    }
+
+    @Test(priority = 2)
+    public void clickNewUserButtonTest() {
+        boolean isPannelVisible = usersPage.clickNewUserButton();
+        Assert.assertTrue(isPannelVisible);
+    }
+
+    @Test(priority = 3)
+    public void fillTheFormTest() {
+        usersPage.fillTheForm("Ahamed", "Aathil", "A", "aahamed@gmail.com");
     }
 
     @AfterMethod
