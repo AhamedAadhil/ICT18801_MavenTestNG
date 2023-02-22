@@ -1,6 +1,7 @@
 package com.ict18801.assignment.pages;
 
 import com.ict18801.assignment.base.TestBase;
+import com.ict18801.assignment.util.TestUtil;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -45,7 +46,7 @@ public class UsersPage extends TestBase {
 
     public void fillTheForm(String fname, String lname, String mname, String mail) {
         clickNewUserButton();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
         firstname.sendKeys(fname);
         middlename.sendKeys(mname);
         lastname.sendKeys(lname);
