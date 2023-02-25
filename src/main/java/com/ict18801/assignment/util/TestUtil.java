@@ -22,6 +22,9 @@ public class TestUtil {
     static Workbook workbook;
     static Sheet sheet;
 
+    /**
+     * This function is used to read test data from Excel sheet and store them in a 2D object array
+     **/
     public static Object[][] getTestData(String sheetName) {
         FileInputStream fis = null;
         try {
@@ -46,10 +49,14 @@ public class TestUtil {
         }
         return data;
     }
-    public static void takeScreenshotAtEndOfTest() throws IOException{
+
+    /**
+     * this function used to capture screenshots when a test gets failed
+     **/
+    public static void takeScreenshotAtEndOfTest() throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String currentDir = System.getProperty("user.dir");
-        File destFile=new File(currentDir+"\\screenshot\\"+System.currentTimeMillis()+".png");
+        File destFile = new File(currentDir + "\\screenshot\\" + System.currentTimeMillis() + ".png");
         FileHandler.copy(scrFile, destFile);
     }
 }

@@ -11,6 +11,7 @@
             <class name="com.ict18801.assignment.tests.ReportPageTest"></class>
             <class name="com.ict18801.assignment.tests.TaskPageTest"></class>
             <class name="com.ict18801.assignment.tests.UsersPageTest"></class>
+            <class name="com.ict18801.assignment.tests.ApproveTTPageTest"></class>
         </classes>
 
     </test>

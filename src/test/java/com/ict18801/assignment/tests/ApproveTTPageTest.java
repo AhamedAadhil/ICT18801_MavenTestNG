@@ -37,7 +37,11 @@ public class ApproveTTPageTest extends TestBase {
         Assert.assertTrue(approveTTPage.acceptAlltt());
     }
 
-    /*once acceptAllttTest trigger all the tt data will be deleted. so there is no point to trigger this test*/
+    /**
+     * once acceptAllttTest trigger all the tt data will be deleted.
+     * so there is no point to trigger rejectAllttTest() test
+     **/
+
 //    @Test(priority = 3)
 //    public void rejectAllttTest(){
 //        Assert.assertTrue(approveTTPage.rejectAlltt());
