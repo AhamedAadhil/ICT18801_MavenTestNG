@@ -13,6 +13,7 @@ public class HomePageTest extends TestBase {
     ReportsPage reportsPage;
     TasksPage tasksPage;
     UsersPage usersPage;
+    ApproveTTPage approveTTPage;
 
 
     public HomePageTest() {
@@ -26,6 +27,7 @@ public class HomePageTest extends TestBase {
         reportsPage = new ReportsPage();
         tasksPage = new TasksPage();
         usersPage = new UsersPage();
+        approveTTPage=new ApproveTTPage();
         homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
 
@@ -54,9 +56,13 @@ public class HomePageTest extends TestBase {
     }
 
 
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void clickOnUserPageTest() {
         usersPage = homePage.ClickUsers();
+    }
+    @Test(priority = 6)
+    public void clickOnApproveTTPageTest(){
+        approveTTPage=homePage.ClickApproveTimeTrack();
     }
 
     @AfterMethod

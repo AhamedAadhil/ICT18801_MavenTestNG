@@ -14,7 +14,8 @@ public class HomePage extends TestBase {
     WebElement reports;
     @FindBy(xpath = "//div[contains(text(),'Users')]")
     WebElement users;
-
+    @FindBy(xpath = "//a[contains(text(),'Approve Time-Track')]")
+    WebElement ApproveTimeTrackButton;
     public HomePage() {
         PageFactory.initElements(driver, this);
     }
@@ -43,4 +44,9 @@ public class HomePage extends TestBase {
         users.click();
         return new UsersPage();
     }
+    public ApproveTTPage ClickApproveTimeTrack(){
+        ApproveTimeTrackButton.click();
+        return new ApproveTTPage();
+    }
+
 }
